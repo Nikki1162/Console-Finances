@@ -87,12 +87,15 @@ var finances = [
 ['Feb-2017', 671099]
 ];
 
-// Total number of months within this data.
+// Total months within this dataset:
 let totalMonths = finances.length;
-console.log('Total months:' + totalMonths);
+console.log('Total months: ' + totalMonths);
 
-const profitLoss = finances.filter((el) => el[1]);
-const totalProfitLoss = profitLoss
-    .map((el) => el[1])
-    .reduce((accValue, curValue) => accValue + curValue);
-console.log('Total amount of profit/losses over the entire period: ', totalProfitLoss);
+// Profit/loss total for the period of time in this dataset:
+const sumProfitLoss = finances.reduce (
+    (accumulator, currentValue) => accumulator + currentValue[1],
+    0,
+);
+console.log('Total profit/loss: $' + sumProfitLoss);
+
+// Average change in profit/loss for the period of time in this dataset:
