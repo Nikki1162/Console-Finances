@@ -1,3 +1,6 @@
+let datasetTitle = 'Financial Analysis';
+console.log(datasetTitle)
+
 var finances = [
 ['Jan-2010', 867884],
 ['Feb-2010', 984655],
@@ -99,3 +102,21 @@ const sumProfitLoss = finances.reduce (
 console.log('Total profit/loss: $' + sumProfitLoss);
 
 // Average change in profit/loss for the period of time in this dataset:
+let averageProfitLoss = finances.reduce((accumulator, currentValue, totalMonths) => {
+    let result = (totalMonths > 1) ? accumulator : {total: accumulator[1], average: accumulator[1], sumChange: 0, lastMonth: accumulator[1], increase: accumulator, decrease: accumulator},
+        change = currentValue[1] - result.lastMonth
+    
+    result.total += currentValue[1];
+    result.sumChange += change;
+    result.lastMonth = currentValue[1];
+    result.average = result.sumChange / totalMonths;
+    result.increase = (result.increase[1] > change) ? result.increase : [currentValue[0], change];
+    result.decrease = (result.decrease[1] < change) ? result.decrease : [currentValue[0], change];
+    return result;
+})
+
+let roundAverageNumber = averageProfitLoss.average;
+roundAverageNumber = roundAverageNumber.toFixed(2);
+
+const totalChange = roundAverageNumber;
+console.log('Average change in profit/loss: $' + totalChange)
