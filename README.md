@@ -14,11 +14,9 @@ The task was to write code to analyse the dataset and meet the following criteri
     - The greatest decrease in losses (date and amount) over the entire period.
 
 ## **How?**
-The code I employed to provide the dataset analysis is displayed in the console using console.log.
+The code I employed to provide the dataset analysis returns the below results in the console log.
 
-When the file is opened in the browser, the final result looks as follows within the console log:
-
-//Insert image//
+When the file is opened in the browser, the final result looks as follows:
 
 ## **Final result**
 ![This is what the live application looks like when you open the console log within the browser](./images/Console-log-view.png)
