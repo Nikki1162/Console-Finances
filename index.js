@@ -120,3 +120,6 @@ roundAverageNumber = roundAverageNumber.toFixed(2);
 
 const totalChange = roundAverageNumber;
 console.log('Average change in profit/loss: $' + totalChange)
+
+//Biggest increase of profit in both date and quantity for the entire period within the dataset:
+console.log('Greatest increase of profits time/date: ' + averageProfitLoss.increase[0], '('+averageProfitLoss.increase[1]+')');
